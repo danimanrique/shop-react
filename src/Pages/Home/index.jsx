@@ -16,7 +16,7 @@ function Home() {
 
   return (
     <>
-      <div className="mb-2">
+      <div className="my-6">
         <h1 className="text-xl">Home</h1>
       </div>
       <div className="my-6 grid place-items-center gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full max-w-screen-xl">

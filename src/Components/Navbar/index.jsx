@@ -56,7 +56,7 @@ const Navbar = () => {
           <NavLink to="/sign-in">Sign In</NavLink>
         </li>
         <li>
-          <div className="flex items-center">
+          <div className="flex items-center cursor-pointer" onClick={() => (context.openCheckoutSideMenu())}>
             <ShoppingCartIcon className="size-4 mr-2"/>
             {context?.count}
           </div>

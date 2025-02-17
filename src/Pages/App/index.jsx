@@ -4,6 +4,7 @@ import Navbar from "../../Components/Navbar";
 import LayoutContent from "../../Layouts/Content";
 import "./App.css";
 import { ShoppingCartProvider } from "../../Context";
+import CheckoutSideMenu from "../../Components/CheckoutSideMenu";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <LayoutContent>
           <AppRouters />
           <Navbar />
+          <CheckoutSideMenu />
         </LayoutContent>
       </BrowserRouter>
     </ShoppingCartProvider>
