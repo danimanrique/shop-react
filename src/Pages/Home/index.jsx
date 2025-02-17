@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Card from "../../Components/Card";
 import ProductDetail from "../../Components/ProductDetail";
+import { ShoppingCartContext } from "../../Context";
 const apiUrl = 'https://fakestoreapi.com'
 
 function Home() {
   const [products, setProducts] = useState(null);
+  const context = useContext(ShoppingCartContext);
 
   useEffect(() => {
     fetch(`${apiUrl}/products?offset=1050`)
@@ -24,7 +26,10 @@ function Home() {
           ))
         }
       </div>
-      <ProductDetail />
+      {
+        context.isProductDetailOpen &&
+        <ProductDetail />
+      }
     </>
   );
 }
