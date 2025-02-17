@@ -1,9 +1,13 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import {apiService} from "../Services/apiService";
 
 export const ShoppingCartContext = createContext();
 
 export const ShoppingCartProvider = ({ children }) => {
+  // Products 
+  const [products, setProducts] = useState(null);
+
   // Shopping card - count
   const [count, setCount] = useState(0);
 
@@ -29,9 +33,14 @@ export const ShoppingCartProvider = ({ children }) => {
   // Shopping card - My orders
   const [myOrders, setMyOrders] = useState([]);
 
+  useEffect(() => {
+    apiService.getProducts().then((data) => setProducts(data));
+  }, []);
+
   return (
     <ShoppingCartContext.Provider
       value={{
+        products,
         count,
         setCount,
         isProductDetailOpen,
