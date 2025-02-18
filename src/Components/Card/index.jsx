@@ -46,7 +46,7 @@ const Card = ({ product }) => {
 
   return (
     <div onClick={() => showProductDetail()}
-      className="bg-white cursor-pointer w-56 h-60 shadow-sm rounded-lg overflow-hidden">
+      className="bg-white cursor-pointer w-56 h-60 shadow-sm rounded-lg overflow-hidden p-2">
       <figure className="relative mb-2 w-full h-4/5">
         <span className="absolute bottom-2 left-2 text-sm rounded-lg bg-white/90 px-3 py-0.5">{product.category}</span>
         <img className="w-full h-full object-contain" src={product.image} alt={product.title} />

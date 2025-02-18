@@ -32,7 +32,7 @@ function MyOrder() {
           <div>
             <p className="flex flex-col font-light text-center">
               <span className="font-bold">
-                { params.index ? `Order Nº ${params.index}` : `Order Nº ${context.myOrders.length + 1}` }
+                { params.index ? `Order Nº ${parseInt(params.index) + 1}` : `Order Nº ${context.myOrders.length + 1}` }
               </span>
               {order.createdAt}
             </p>

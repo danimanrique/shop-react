@@ -11,7 +11,9 @@ const Navbar = () => {
     <nav className="flex justify-between items-center fixed z-10 top-0  w-full py-5 px-8 text-sm font-light bg-white">
       <ul className="flex items-center gap-3">
         <li className="font-semibold text-lg">
-          <NavLink to="/">Shopi</NavLink>
+          <NavLink to="/" onClick={() => {
+              context.setCategory(null);
+            }}>Shopi</NavLink>
         </li>
         <li>
           <NavLink to="/" className={({ isActive }) => (isActive ? activeStyle : undefined)}>
@@ -19,8 +21,13 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/clothes" className={({ isActive }) => (isActive ? activeStyle : undefined)}>
-            Clothes
+          <NavLink to="/men's clothing" className={({ isActive }) => (isActive ? activeStyle : undefined)}>
+            Men&apos;s clothing
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/women's clothing" className={({ isActive }) => (isActive ? activeStyle : undefined)}>
+            Women&apos;s clothing
           </NavLink>
         </li>
         <li>
@@ -29,18 +36,8 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/furnitures" className={({ isActive }) => (isActive ? activeStyle : undefined)}>
-            Furnitures
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/toys" className={({ isActive }) => (isActive ? activeStyle : undefined)}>
-            Toys
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/others" className={({ isActive }) => (isActive ? activeStyle : undefined)}>
-            Others
+          <NavLink to="/jewelery" className={({ isActive }) => (isActive ? activeStyle : undefined)}>
+            Jewelery
           </NavLink>
         </li>
       </ul>

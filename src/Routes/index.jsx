@@ -9,6 +9,7 @@ import {useRoutes} from 'react-router-dom';
 const AppRoutes = () => {
     let routes = useRoutes([
         { path: '/', element: <Home /> },
+        { path: '/:category', element: <Home /> },
         { path: '/my-account', element: <MyAccount /> },
         { path: '/my-orders/last', element: <MyOrder /> },
         { path: '/my-orders/:index', element: <MyOrder /> },

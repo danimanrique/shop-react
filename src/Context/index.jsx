@@ -1,12 +1,13 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import {apiService} from "../Services/apiService";
+import { apiService } from "../Services/apiService";
 
 export const ShoppingCartContext = createContext();
 
 export const ShoppingCartProvider = ({ children }) => {
-  // Products 
+  // Products
   const [products, setProducts] = useState(null);
+  const [filteredProducts, setFilteredProducts] = useState(null);
 
   // Shopping card - count
   const [count, setCount] = useState(0);
@@ -33,9 +34,37 @@ export const ShoppingCartProvider = ({ children }) => {
   // Shopping card - My orders
   const [myOrders, setMyOrders] = useState([]);
 
+  // Search products
+  const [search, setSearch] = useState("");
+
+  // Search products by category
+  const [category, setCategory] = useState("");
+
+  const filterProductsByTitle = (items, search) => {
+    return items?.filter((x) => x.title.toLowerCase().includes(search.toLowerCase()));
+  };
+  
+  const filterProductsByCategory = (items, category) => {
+    const filtered = items?.filter((x) => x.category.toLowerCase() === category.toLowerCase());
+    return filtered;
+  };
+  
   useEffect(() => {
-    apiService.getProducts().then((data) => setProducts(data));
+    apiService.getProducts().then((data) => {
+      setProducts(data); 
+      setFilteredProducts(data)
+    });
   }, []);
+
+  useEffect(() => {
+    if (search && !category) setFilteredProducts(filterProductsByTitle(products, search));
+    if (category && !search) setFilteredProducts(filterProductsByCategory(products, category));
+    if (search && category) {
+      const filteredByTitle = filterProductsByTitle(products, search);
+      setFilteredProducts(filterProductsByCategory(filteredByTitle, category));
+    }
+    if (!search && !category) setFilteredProducts(products);
+  }, [products, search, category]);
 
   return (
     <ShoppingCartContext.Provider
@@ -57,6 +86,12 @@ export const ShoppingCartProvider = ({ children }) => {
         setMyOrder,
         myOrders,
         setMyOrders,
+        search,
+        setSearch,
+        filteredProducts,
+        setFilteredProducts,
+        category,
+        setCategory,
       }}
     >
       {children}
