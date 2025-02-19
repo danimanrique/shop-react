@@ -29,7 +29,7 @@ function MyOrdersPage() {
             </Link>
           ))
         ) : (
-          <p>No order yet</p>
+          <p className="text-center">No order yet</p>
         )}
       </div>
     </>

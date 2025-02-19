@@ -41,14 +41,14 @@ const CheckoutSideMenu = () => {
       } side-drawer flex-col fixed bg-white right-1 border border-black rounded-lg p-6 mb-2 z-11`}
     >
       <div className="flex flex-col justify-between h-full">
-          <div className="mb-2 flex justify-between items-center">
+          <div className="mb-2 flex justify-between items-center pr-2">
             <span className="flex items-center">
               <h2 className="font-medium text-xl mr-2">My order</h2>
               <span className="text-xs font-light">({context.count} products)</span>
             </span>
             <XMarkIcon onClick={() => context.closeCheckoutSideMenu()} className="h-6 w-6 cursor-pointer" />
           </div>
-          <div className="flex-1 py-4 overflow-y-scroll">
+          <div className="flex-1 py-4 pr-4 overflow-y-scroll">
             {context.cartProducts.map((product, index) => (
               <OrderCard
                 key={index}

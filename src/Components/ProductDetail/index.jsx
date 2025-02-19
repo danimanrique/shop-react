@@ -37,7 +37,7 @@ const ProductDetail = () => {
   };
 
   return (
-    <aside className="side-drawer flex flex-col fixed bg-white right-1 border border-black rounded-lg p-6 mb-2 z-11">
+    <aside className="overflow-y-scroll side-drawer flex flex-col fixed bg-white right-1 border border-black rounded-lg p-6 mb-2 z-11">
       <div className="flex justify-between items-center">
         <h2 className="font-medium text-xl">Product detail</h2>
         <XMarkIcon onClick={() => context.closeProductDetail()} className="h-6 w-6 cursor-pointer" />
