@@ -4,7 +4,7 @@ import OrderCard from "../../Components/OrderCard";
 import { Link, useParams } from "react-router-dom";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
-function MyOrder() {
+function MyOrderPage() {
   const context = useContext(ShoppingCartContext);
   const params = useParams();
 
@@ -60,4 +60,4 @@ function MyOrder() {
   );
 }
 
-export default MyOrder;
+export default MyOrderPage;

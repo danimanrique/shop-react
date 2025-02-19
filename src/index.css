@@ -1,9 +1,10 @@
-body {
+html, body {
+    height: 100vh;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: #e6e1dc;
+    color: rgb(111, 96, 76);
 }
 .side-drawer {
     width: 360px;

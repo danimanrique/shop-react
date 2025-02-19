@@ -1,7 +1,7 @@
-function MyAccount() {
+function MyAccountPage() {
   return (
-    <div>MyAccount</div>
+    <div>MyAccountPage</div>
   )
 }
 
-export default MyAccount
+export default MyAccountPage

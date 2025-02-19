@@ -4,7 +4,7 @@ import Card from "../../Components/Card";
 import ProductDetail from "../../Components/ProductDetail";
 import { ShoppingCartContext } from "../../Context";
 
-function Home() {
+function HomePage() {
   const context = useContext(ShoppingCartContext);
   const { category } = useParams();
 
@@ -41,4 +41,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

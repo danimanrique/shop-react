@@ -1,7 +1,7 @@
-function NotFound() {
+function NotFoundPage() {
   return (
-    <div>NotFound</div>
+    <div>NotFoundPage</div>
   )
 }
 
-export default NotFound
+export default NotFoundPage

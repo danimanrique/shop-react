@@ -1,7 +1,7 @@
-function SignIn() {
+function SignInPage() {
   return (
-    <div>SignIn</div>
+    <div>SignInPage</div>
   )
 }
 
-export default SignIn
+export default SignInPage

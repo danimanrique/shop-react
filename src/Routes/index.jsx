@@ -1,21 +1,21 @@
-import Home from '../Pages/Home';
-import MyAccount from '../Pages/MyAccount';
-import MyOrder from '../Pages/MyOrder';
-import MyOrders from '../Pages/MyOrders';
-import NotFound from '../Pages/NotFound';
-import SignIn from '../Pages/SignIn';
+import HomePage from '../Pages/Home';
+import MyAccountPage from '../Pages/MyAccount';
+import MyOrderPage from '../Pages/MyOrder';
+import MyOrdersPage from '../Pages/MyOrders';
+import NotFoundPage from '../Pages/NotFound';
+import SignInPage from '../Pages/SignIn';
 import {useRoutes} from 'react-router-dom';
 
 const AppRoutes = () => {
     let routes = useRoutes([
-        { path: '/', element: <Home /> },
-        { path: '/:category', element: <Home /> },
-        { path: '/my-account', element: <MyAccount /> },
-        { path: '/my-orders/last', element: <MyOrder /> },
-        { path: '/my-orders/:index', element: <MyOrder /> },
-        { path: '/my-orders', element: <MyOrders /> },
-        { path: '/sign-in', element: <SignIn /> },
-        { path: '/*', element: <NotFound /> },
+        { path: '/', element: <HomePage /> },
+        { path: '/:category', element: <HomePage /> },
+        { path: '/my-account', element: <MyAccountPage /> },
+        { path: '/my-orders/last', element: <MyOrderPage /> },
+        { path: '/my-orders/:index', element: <MyOrderPage /> },
+        { path: '/my-orders', element: <MyOrdersPage /> },
+        { path: '/sign-in', element: <SignInPage /> },
+        { path: '/*', element: <NotFoundPage /> },
       ]);
     return routes;
 }
