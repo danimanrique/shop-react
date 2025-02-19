@@ -6,6 +6,11 @@ html, body {
     background-color: #e6e1dc;
     color: rgb(111, 96, 76);
 }
+
+#root {
+    height: 100%;
+}
+
 .side-drawer {
     width: 360px;
     height: calc(100vh - 70px);
